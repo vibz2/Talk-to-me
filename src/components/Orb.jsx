@@ -93,9 +93,9 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
       return vec4(colorIn.rgb / (a + 1e-5), a);
     }
 
-    const vec3 baseColor1 = vec3(1.000, 0.325, 0.376);  // Bright cherry red
-    const vec3 baseColor2 = vec3(1.000, 0.588, 0.604);  // Light coral
-    const vec3 baseColor3 = vec3(1.000, 0.788, 0.796);  // Soft rose pink
+    const vec3 baseColor1 = vec3(0.611765, 0.262745, 0.996078);
+    const vec3 baseColor2 = vec3(0.298039, 0.760784, 0.913725);
+    const vec3 baseColor3 = vec3(0.062745, 0.078431, 0.600000);
 
     const float innerRadius = 0.6;
     const float noiseScale = 0.65;
@@ -159,7 +159,7 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
     void main() {
       vec2 fragCoord = vUv * iResolution.xy;
       vec4 col = mainImage(fragCoord);
-      gl_FragColor = vec4(col.rgb * col.a, col.a);
+      gl_FragColor = vec4(col.rgb, col.a);
     }
   `;
 
