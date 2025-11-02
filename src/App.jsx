@@ -7,7 +7,6 @@ export default function App() {
   return (
     <div className="bg-[#FFFFFF] min-h-screen text-[#2B2B2B] font-sans">
       <Routes>
-        {/* Home route */}
         <Route path="/" element={
           <>
             <Hero />

@@ -45,7 +45,7 @@ export default function ChatPage() {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
-    const [sidebarOpen, setSidebarOpen] = useState(false); // Closed by default for immersion
+    const [sidebarOpen, setSidebarOpen] = useState(false); 
     const [conversations, setConversations] = useState([]);
     const [currentConversationId, setCurrentConversationId] = useState(null);
     const messagesEndRef = useRef(null);
@@ -185,7 +185,6 @@ export default function ChatPage() {
 
     return (
         <div className="flex h-screen bg-[#FFFFFF] overflow-hidden">
-            {/* Overlay Sidebar */}
             {sidebarOpen && (
                 <div
                     className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
@@ -263,7 +262,7 @@ export default function ChatPage() {
                                             e.stopPropagation();
                                             deleteConversation(conv.id);
                                         }}
-                                        className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 rounded transition"
+                                        className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 rounded transition cursor-pointer"
                                     >
                                         <Trash2 className="w-4 h-4 text-red-500" />
                                     </button>
@@ -284,11 +283,8 @@ export default function ChatPage() {
                 </div>
             </div>
 
-            {/* Main Split View */}
             <div className="flex-1 flex h-full">
-                {/* LEFT: Therapist Avatar & Presence - 40% */}
                 <div className="w-[40%] bg-gradient-to-br from-[#FFF5F5] via-[#FFEBEB] to-[#FFD6D6] relative flex flex-col">
-                    {/* Menu button */}
                     <button
                         onClick={() => setSidebarOpen(true)}
                         className="absolute top-6 left-6 z-10 p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-105 cursor-pointer"
@@ -296,15 +292,12 @@ export default function ChatPage() {
                         <Menu className="w-5 h-5 text-[#B80F2A]" />
                     </button>
 
-                    {/* Avatar - Centered vertically */}
                     <div className="flex-1 flex items-center justify-center p-12">
                         <div className="relative">
                             <div className="w-80 h-80 relative">
-                                {/* Outer glow rings */}
                                 <div className={`absolute inset-0 ${loading ? 'animate-ping' : 'animate-pulse'} bg-[#B80F2A]/20 rounded-full blur-3xl`} />
                                 <div className="absolute inset-4 bg-[#B80F2A]/10 rounded-full blur-2xl" />
 
-                                {/* Orb container */}
                                 <div className="relative w-full h-full">
                                     <Spline scene={therapist.url} />
                                 </div>
@@ -312,7 +305,6 @@ export default function ChatPage() {
                         </div>
                     </div>
 
-                    {/* Therapist Info - Bottom */}
                     <div className="p-8 bg-white/60 backdrop-blur-xl border-t border-[#B80F2A]/20">
                         <div className="max-w-sm mx-auto text-center space-y-3">
                             <h2 className="text-3xl font-bold text-[#2B2B2B]">{therapist.name}</h2>
@@ -321,7 +313,6 @@ export default function ChatPage() {
                                 {therapist.subtitle}
                             </p>
 
-                            {/* Status indicator */}
                             <div className="pt-4 flex items-center justify-center gap-2">
                                 {loading ? (
                                     <>
@@ -343,9 +334,7 @@ export default function ChatPage() {
                     </div>
                 </div>
 
-                {/* RIGHT: Conversation Space - 60% */}
                 <div className="w-[60%] flex flex-col bg-white">
-                    {/* Conversation area */}
                     <div className="flex-1 overflow-y-auto p-8">
                         {messages.length === 0 ? (
                             <div className="h-full flex items-center justify-center">
@@ -368,12 +357,10 @@ export default function ChatPage() {
                             <div className="max-w-2xl space-y-6">
                                 {messages.map((msg, idx) => (
                                     <div key={idx} className="space-y-2">
-                                        {/* Label */}
                                         <p className="text-xs font-semibold text-[#2B2B2B]/50 uppercase tracking-wider">
                                             {msg.role === 'user' ? 'You' : therapist.name}
                                         </p>
 
-                                        {/* Message content */}
                                         <div className={`prose prose-lg max-w-none ${msg.role === 'user'
                                             ? 'text-[#2B2B2B]'
                                             : 'text-[#2B2B2B]/90'
@@ -403,7 +390,6 @@ export default function ChatPage() {
                         )}
                     </div>
 
-                    {/* Input area */}
                     <div className="border-t border-[#B80F2A]/10 bg-[#FFF5F5] p-6">
                         <div className="max-w-2xl">
                             <div className="bg-white rounded-2xl shadow-lg border border-[#B80F2A]/20 overflow-hidden">
