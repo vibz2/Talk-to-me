@@ -20,7 +20,7 @@ const therapists = [
     },
     {
         name: 'Dr. Junibee Cottontuft',
-        occupation: 'Reconstructive Therapy',
+        occupation: 'Psychodynamic Therapy',
         quote: 'Soft steps. Strong rebuild.',
         url: 'https://prod.spline.design/3pZHwWqXg-pcbvsW/scene.splinecode',
         mode: 'psychodynamic'

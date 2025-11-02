@@ -14,7 +14,7 @@ import {
 
 const THERAPY_MODES = {
     cbt: {
-        name: 'Dr. Sam',
+        name: 'Dr. Quentina Waddle',
         title: 'Cognitive Behavioral Therapy',
         subtitle: 'Let\'s explore your thoughts together',
         color: 'bg-blue-500',
@@ -22,7 +22,7 @@ const THERAPY_MODES = {
         hue: 220
     },
     somatic: {
-        name: 'Dr. Ava',
+        name: 'Dr. Moana Burrow',
         title: 'Somatic Therapy',
         subtitle: 'Listen to what your body is telling you',
         color: 'bg-green-500',
@@ -30,7 +30,7 @@ const THERAPY_MODES = {
         hue: 140
     },
     psychodynamic: {
-        name: 'Dr. Leo',
+        name: 'Dr. Junibee Cottontuft',
         title: 'Psychodynamic Therapy',
         subtitle: 'Understanding patterns from the past',
         color: 'bg-purple-500',
@@ -45,7 +45,7 @@ export default function ChatPage() {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
-    const [sidebarOpen, setSidebarOpen] = useState(false); 
+    const [sidebarOpen, setSidebarOpen] = useState(false);
     const [conversations, setConversations] = useState([]);
     const [currentConversationId, setCurrentConversationId] = useState(null);
     const messagesEndRef = useRef(null);

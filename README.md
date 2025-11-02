@@ -22,7 +22,7 @@ privacy and easy revisiting.
     _"Let’s rethink, one step at a time."_
   - **Dr. Moana Burrow** – _Somatic Therapy_  
     _"Feel it in your roots."_
-  - **Dr. Junibee Cottontuft** – _Reconstructive Therapy_  
+  - **Dr. Junibee Cottontuft** – _Psychodynamic Therapy_  
     _"Soft steps. Strong rebuild."_
 
 - 🧘 **Safe, Judgment-Free Space**  
