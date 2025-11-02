@@ -7,7 +7,7 @@
 **Talk To Me** is a mental health web app designed to provide gentle, AI-powered therapeutic support. 
 In contrast to normal AI therapists, Talk To Me provides a wide array of therapy techniques:
 Cognitive Behavioral Therapy, Somatic Therapy, Psychodynamic Therapy; so that everyone can have the
-support which best suits them!Users can chat with one of three virtual therapists, each representing 
+support which best suits them! Users can chat with one of three virtual therapists, each representing 
 a different approach to healing. Sessions are powered by the **Gemini API** and saved locally for 
 privacy and easy revisiting.
 
