@@ -1,40 +1,40 @@
-// ============================================
-// src/components/ChatPage.jsx - Immersive Side-by-Side Layout
-// ============================================
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { 
-    Send, 
-    Menu, 
-    X, 
-    MessageSquare, 
+import Spline from '@splinetool/react-spline';
+import {
+    Send,
+    Menu,
+    X,
+    MessageSquare,
     Plus,
     Home,
     Trash2,
     Sparkles
 } from 'lucide-react';
-import Orb from './Orb';
 
 const THERAPY_MODES = {
-    cbt: { 
-        name: 'Dr. Sam', 
+    cbt: {
+        name: 'Dr. Sam',
         title: 'Cognitive Behavioral Therapy',
         subtitle: 'Let\'s explore your thoughts together',
         color: 'bg-blue-500',
+        url: 'https://prod.spline.design/vpGtZv00xY6QN-B6/scene.splinecode',
         hue: 220
     },
-    somatic: { 
-        name: 'Dr. Ava', 
+    somatic: {
+        name: 'Dr. Ava',
         title: 'Somatic Therapy',
         subtitle: 'Listen to what your body is telling you',
         color: 'bg-green-500',
+        url: 'https://prod.spline.design/KjYQ0LxW-pOBH3r5/scene.splinecode',
         hue: 140
     },
-    psychodynamic: { 
-        name: 'Dr. Leo', 
+    psychodynamic: {
+        name: 'Dr. Leo',
         title: 'Psychodynamic Therapy',
         subtitle: 'Understanding patterns from the past',
         color: 'bg-purple-500',
+        url: 'https://prod.spline.design/3pZHwWqXg-pcbvsW/scene.splinecode',
         hue: 270
     },
 };
@@ -57,7 +57,7 @@ export default function ChatPage() {
         if (saved) {
             const parsed = JSON.parse(saved);
             setConversations(parsed);
-            
+
             const modeConversations = parsed.filter(c => c.mode === therapyMode);
             if (modeConversations.length > 0) {
                 const latest = modeConversations[0];
@@ -128,8 +128,8 @@ export default function ChatPage() {
             setConversations(prev => [newConv, ...prev]);
             setCurrentConversationId(newId);
         } else {
-            setConversations(prev => prev.map(c => 
-                c.id === currentConversationId 
+            setConversations(prev => prev.map(c =>
+                c.id === currentConversationId
                     ? { ...c, messages: newMessages }
                     : c
             ));
@@ -163,9 +163,9 @@ export default function ChatPage() {
             updateCurrentConversation(updatedMessages);
         } catch (error) {
             console.error('Error:', error);
-            const errorMessage = { 
-                role: 'assistant', 
-                text: 'Sorry, I had trouble connecting. Please try again.' 
+            const errorMessage = {
+                role: 'assistant',
+                text: 'Sorry, I had trouble connecting. Please try again.'
             };
             const updatedMessages = [...newMessages, errorMessage];
             setMessages(updatedMessages);
@@ -187,12 +187,12 @@ export default function ChatPage() {
         <div className="flex h-screen bg-[#FFFFFF] overflow-hidden">
             {/* Overlay Sidebar */}
             {sidebarOpen && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
                     onClick={() => setSidebarOpen(false)}
                 />
             )}
-            
+
             <div className={`${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed left-0 top-0 h-full w-80 transition-transform duration-300 bg-white border-r border-[#B80F2A]/10 flex flex-col z-50 shadow-2xl`}>
                 <div className="p-4 border-b border-[#B80F2A]/10">
                     <div className="flex items-center justify-between mb-4">
@@ -223,11 +223,10 @@ export default function ChatPage() {
                                     navigate(`/chat/${mode}`);
                                     setSidebarOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-lg transition cursor-pointer ${
-                                    mode === therapyMode 
-                                        ? 'bg-[#B80F2A] text-white' 
-                                        : 'hover:bg-[#FFEBEB] text-[#2B2B2B]'
-                                }`}
+                                className={`w-full text-left px-3 py-2 rounded-lg transition cursor-pointer ${mode === therapyMode
+                                    ? 'bg-[#B80F2A] text-white'
+                                    : 'hover:bg-[#FFEBEB] text-[#2B2B2B]'
+                                    }`}
                             >
                                 <div className="font-semibold text-sm">{data.name}</div>
                                 <div className="text-xs opacity-80">{data.title}</div>
@@ -245,11 +244,10 @@ export default function ChatPage() {
                         modeConversations.map(conv => (
                             <div
                                 key={conv.id}
-                                className={`group relative p-3 rounded-lg cursor-pointer transition ${
-                                    conv.id === currentConversationId
-                                        ? 'bg-[#B80F2A]/10 border border-[#B80F2A]/30'
-                                        : 'hover:bg-[#FFEBEB]'
-                                }`}
+                                className={`group relative p-3 rounded-lg cursor-pointer transition ${conv.id === currentConversationId
+                                    ? 'bg-[#B80F2A]/10 border border-[#B80F2A]/30'
+                                    : 'hover:bg-[#FFEBEB]'
+                                    }`}
                                 onClick={() => loadConversation(conv.id)}
                             >
                                 <div className="flex items-start gap-2">
@@ -301,20 +299,14 @@ export default function ChatPage() {
                     {/* Avatar - Centered vertically */}
                     <div className="flex-1 flex items-center justify-center p-12">
                         <div className="relative">
-                            {/* Main Orb */}
                             <div className="w-80 h-80 relative">
                                 {/* Outer glow rings */}
                                 <div className={`absolute inset-0 ${loading ? 'animate-ping' : 'animate-pulse'} bg-[#B80F2A]/20 rounded-full blur-3xl`} />
                                 <div className="absolute inset-4 bg-[#B80F2A]/10 rounded-full blur-2xl" />
-                                
+
                                 {/* Orb container */}
                                 <div className="relative w-full h-full">
-                                    <Orb
-                                        hue={therapist.hue}
-                                        hoverIntensity={loading ? 0.5 : 0.2}
-                                        rotateOnHover={loading}
-                                        forceHoverState={loading}
-                                    />
+                                    <Spline scene={therapist.url} />
                                 </div>
                             </div>
                         </div>
@@ -328,7 +320,7 @@ export default function ChatPage() {
                             <p className="text-sm text-[#2B2B2B]/70 italic leading-relaxed">
                                 {therapist.subtitle}
                             </p>
-                            
+
                             {/* Status indicator */}
                             <div className="pt-4 flex items-center justify-center gap-2">
                                 {loading ? (
@@ -366,7 +358,7 @@ export default function ChatPage() {
                                             Your Safe Space
                                         </h3>
                                         <p className="text-[#2B2B2B]/60 leading-relaxed">
-                                            This is a judgment-free zone. Take your time, breathe, 
+                                            This is a judgment-free zone. Take your time, breathe,
                                             and share whatever feels right.
                                         </p>
                                     </div>
@@ -380,20 +372,19 @@ export default function ChatPage() {
                                         <p className="text-xs font-semibold text-[#2B2B2B]/50 uppercase tracking-wider">
                                             {msg.role === 'user' ? 'You' : therapist.name}
                                         </p>
-                                        
+
                                         {/* Message content */}
-                                        <div className={`prose prose-lg max-w-none ${
-                                            msg.role === 'user' 
-                                                ? 'text-[#2B2B2B]' 
-                                                : 'text-[#2B2B2B]/90'
-                                        }`}>
+                                        <div className={`prose prose-lg max-w-none ${msg.role === 'user'
+                                            ? 'text-[#2B2B2B]'
+                                            : 'text-[#2B2B2B]/90'
+                                            }`}>
                                             <p className="whitespace-pre-wrap leading-relaxed text-lg">
                                                 {msg.text}
                                             </p>
                                         </div>
                                     </div>
                                 ))}
-                                
+
                                 {loading && (
                                     <div className="space-y-2">
                                         <p className="text-xs font-semibold text-[#2B2B2B]/50 uppercase tracking-wider">
@@ -406,7 +397,7 @@ export default function ChatPage() {
                                         </div>
                                     </div>
                                 )}
-                                
+
                                 <div ref={messagesEndRef} />
                             </div>
                         )}
@@ -443,6 +434,6 @@ export default function ChatPage() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

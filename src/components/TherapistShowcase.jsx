@@ -8,19 +8,22 @@ const therapists = [
         name: 'Dr. Quentina Waddle',
         occupation: 'Cognitive Behavioral Therapy',
         quote: 'Let’s rethink, one step at a time.',
-        url: 'https://prod.spline.design/vpGtZv00xY6QN-B6/scene.splinecode'
+        url: 'https://prod.spline.design/vpGtZv00xY6QN-B6/scene.splinecode',
+        mode: 'cbt'
     },
     {
         name: 'Dr. Moana Burrow',
         occupation: 'Somatic Therapy',
         quote: 'Feel it in your roots.',
-        url: 'https://prod.spline.design/KjYQ0LxW-pOBH3r5/scene.splinecode'
+        url: 'https://prod.spline.design/KjYQ0LxW-pOBH3r5/scene.splinecode',
+        mode: 'somatic'
     },
     {
         name: 'Dr. Junibee Cottontuft',
         occupation: 'Reconstructive Therapy',
         quote: 'Soft steps. Strong rebuild.',
-        url: 'https://prod.spline.design/3pZHwWqXg-pcbvsW/scene.splinecode'
+        url: 'https://prod.spline.design/3pZHwWqXg-pcbvsW/scene.splinecode',
+        mode: 'psychodynamic'
     }
 ];
 
@@ -55,7 +58,7 @@ export default function TherapistShowcase() {
                         <p className="text-md font-semibold text-[#B80F2A] mt-1">{therapist.occupation}</p>
                         <p className="text-sm text-[#2B2B2B]/80 mt-1 italic">{therapist.quote}</p>
 
-                        <button 
+                        <button
                             onClick={() => navigate(`/chat/${therapist.mode}`)}
                             className="mt-6 bg-[#B80F2A] text-[#FFFFFF] font-medium px-5 py-2 rounded-xl hover:bg-[#E63946] hover:text-[#FFF8F8] flex items-center gap-2 transition cursor-pointer">
                             <MessageCircle className="w-4 h-4" />
