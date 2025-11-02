@@ -1,6 +1,6 @@
 # 🧠 TalkToMe — Your AI Therapy Companion
 
-[PUT IMAGE HERE]
+<img width="2559" height="1409" alt="image" src="https://github.com/user-attachments/assets/ad26b932-094a-4552-ada9-c5f2fc80e804" />
 
 ## Overview
 
@@ -40,19 +40,19 @@ Sessions are powered by the **Gemini API** and saved locally for privacy and eas
 
 **Landing Page**
 
-[PUT IMAGE HERE]
+<img width="2559" height="1409" alt="image" src="https://github.com/user-attachments/assets/cf8fe8f2-8de1-4cc7-b8b6-84fa87428ce0" />
 
 **Therapist Selection**
 
-[PUT IMAGE HERE]
+<img width="2559" height="1402" alt="image" src="https://github.com/user-attachments/assets/f31fa331-7c8c-4e61-b7b4-026ce4520fab" />
 
 **Active Chat Session**
 
-[PUT IMAGE HERE]
+<img width="2559" height="1410" alt="image" src="https://github.com/user-attachments/assets/97375f97-e859-4236-ae73-95a40464998c" />
 
 **Session History Sidebar**
 
-[PUT IMAGE HERE]
+<img width="2559" height="1404" alt="image" src="https://github.com/user-attachments/assets/7f9cea22-a857-45e6-9ad2-34c32739183d" />
 
 ---
 
