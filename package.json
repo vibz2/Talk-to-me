@@ -12,12 +12,18 @@
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/vite": "^4.1.16",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "gsap": "^3.13.0",
     "lucide-react": "^0.552.0",
     "motion": "^12.23.24",
+    "node-fetch": "^3.3.2",
     "ogl": "^1.0.11",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.5",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {

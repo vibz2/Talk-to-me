@@ -1,13 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import Spline from '@splinetool/react-spline';
 import { MessageCircle } from 'lucide-react';
 
 const therapists = [
-    { name: 'Dr. Sam', occupation: 'Cognitive Behavioral Therapy', quote: 'Let’s rethink together.' },
-    { name: 'Dr. Ava', occupation: 'Somatic Therapy', quote: 'Feel and heal gently.' },
-    { name: 'Dr. Leo', occupation: 'Reconstructive Therapy', quote: 'We’ll rebuild softly.' },
+    { name: 'Dr. Sam', occupation: 'Cognitive Behavioral Therapy', quote: 'Let’s rethink together.', mode: 'cbt' },
+    { name: 'Dr. Ava', occupation: 'Somatic Therapy', quote: 'Feel and heal gently.', mode: 'somatic' },
+    { name: 'Dr. Leo', occupation: 'Psychodynamic Therapy', quote: 'Explore the past, understand the present.', mode: 'psychodynamic' },
 ];
 
 export default function TherapistShowcase() {
+    const navigate = useNavigate();
     return (
         <section className="bg-[#FFFFFF] py-20 px-4">
             <h2 className="text-center text-4xl font-bold text-[#2B2B2B] mb-14">
@@ -28,7 +30,9 @@ export default function TherapistShowcase() {
                         <p className="text-md font-semibold text-[#B80F2A] mt-1">{therapist.occupation}</p>
                         <p className="text-sm text-[#2B2B2B]/80 mt-1 italic">{therapist.quote}</p>
 
-                        <button className="mt-6 bg-[#B80F2A] text-[#FFFFFF] font-medium px-5 py-2 rounded-xl hover:bg-[#E63946] hover:text-[#FFF8F8] flex items-center gap-2 transition">
+                        <button 
+                            onClick={() => navigate(`/chat/${therapist.mode}`)}
+                            className="mt-6 bg-[#B80F2A] text-[#FFFFFF] font-medium px-5 py-2 rounded-xl hover:bg-[#E63946] hover:text-[#FFF8F8] flex items-center gap-2 transition">
                             <MessageCircle className="w-4 h-4" />
                             Talk Now
                         </button>
