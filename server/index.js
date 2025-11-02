@@ -4,14 +4,14 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import crypto from "crypto";
-import THERAPY_TYPES from "../src/prompts.js"; // adjust path if needed
+import THERAPY_TYPES from "../src/prompts.js"; 
 
 dotenv.config();
 
 const app = express();
 app.use(cors({
   origin: true,
-  credentials: true, // allow cookies
+  credentials: true, 
 }));
 app.use(express.json());
 app.use(cookieParser());
@@ -24,15 +24,12 @@ if (!GEMINI_API_KEY) {
   process.exit(1);
 }
 
-// In-memory conversation store
 const memoryStore = {};
 
-// Health check
 app.get("/", (req, res) => {
   res.send("AI Therapist backend is running!");
 });
 
-// Generate AI response
 app.post("/api/generate", async (req, res) => {
   try {
     const { mode, messages } = req.body;
@@ -41,30 +38,26 @@ app.post("/api/generate", async (req, res) => {
       return res.status(400).json({ error: "Invalid or missing therapy mode or messages" });
     }
 
-    // Get or create userId via cookie
     let userId = req.cookies.userId;
     if (!userId) {
       userId = crypto.randomUUID();
-      res.cookie("userId", userId, { maxAge: 365 * 24 * 60 * 60 * 1000 }); // 1 year
+      res.cookie("userId", userId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
     }
 
-    // Initialize user memory if not exists
     if (!memoryStore[userId]) memoryStore[userId] = [];
 
-    // Add user message to memory
     memoryStore[userId].push({ role: "user", text: messages });
 
     const systemPrompt = THERAPY_TYPES[mode].systemPrompt;
 
-    // Prepare Gemini contents (NO system role here)
     const contents = memoryStore[userId].map(msg => ({
-      role: msg.role === "assistant" ? "model" : "user", // Gemini uses "model" not "assistant"
+      role: msg.role === "assistant" ? "model" : "user",
       parts: [{ text: msg.text }]
     }));
 
     const payload = {
       contents,
-      systemInstruction: {  // Use systemInstruction instead of system role
+      systemInstruction: {  
         parts: [{ text: systemPrompt }]
       },
       generationConfig: {
@@ -90,11 +83,9 @@ app.post("/api/generate", async (req, res) => {
       return res.status(500).json({ error: data.error });
     }
 
-    // Extract AI reply correctly
     const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || 
                    "Sorry, I couldn't generate a response.";
 
-    // Add AI response to memory with correct role
     memoryStore[userId].push({ role: "model", text: aiText });
 
     res.json({ output: aiText });
