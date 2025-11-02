@@ -199,14 +199,14 @@ export default function ChatPage() {
                         <h2 className="text-xl font-bold text-[#2B2B2B]">Your Sessions</h2>
                         <button
                             onClick={() => setSidebarOpen(false)}
-                            className="p-2 hover:bg-[#FFEBEB] rounded-lg transition"
+                            className="p-2 hover:bg-[#FFEBEB] rounded-lg transition cursor-pointer"
                         >
                             <X className="w-5 h-5" />
                         </button>
                     </div>
                     <button
                         onClick={startNewConversation}
-                        className="w-full bg-[#B80F2A] text-white px-4 py-2 rounded-xl hover:bg-[#E63946] flex items-center gap-2 justify-center transition"
+                        className="w-full bg-[#B80F2A] text-white px-4 py-2 rounded-xl hover:bg-[#E63946] flex items-center gap-2 justify-center transition cursor-pointer"
                     >
                         <Plus className="w-4 h-4" />
                         New Session
@@ -223,7 +223,7 @@ export default function ChatPage() {
                                     navigate(`/chat/${mode}`);
                                     setSidebarOpen(false);
                                 }}
-                                className={`w-full text-left px-3 py-2 rounded-lg transition ${
+                                className={`w-full text-left px-3 py-2 rounded-lg transition cursor-pointer ${
                                     mode === therapyMode 
                                         ? 'bg-[#B80F2A] text-white' 
                                         : 'hover:bg-[#FFEBEB] text-[#2B2B2B]'
@@ -278,7 +278,7 @@ export default function ChatPage() {
                 <div className="p-4 border-t border-[#B80F2A]/10">
                     <button
                         onClick={() => navigate('/')}
-                        className="w-full bg-[#FFEBEB] text-[#2B2B2B] px-4 py-2 rounded-xl hover:bg-[#FFD6D6] flex items-center gap-2 justify-center transition"
+                        className="w-full bg-[#FFEBEB] text-[#2B2B2B] px-4 py-2 rounded-xl hover:bg-[#FFD6D6] flex items-center gap-2 justify-center transition cursor-pointer"
                     >
                         <Home className="w-4 h-4" />
                         Back to Home
@@ -293,7 +293,7 @@ export default function ChatPage() {
                     {/* Menu button */}
                     <button
                         onClick={() => setSidebarOpen(true)}
-                        className="absolute top-6 left-6 z-10 p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-105"
+                        className="absolute top-6 left-6 z-10 p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition hover:scale-105 cursor-pointer"
                     >
                         <Menu className="w-5 h-5 text-[#B80F2A]" />
                     </button>
@@ -432,7 +432,7 @@ export default function ChatPage() {
                                     <button
                                         onClick={sendMessage}
                                         disabled={!input.trim() || loading}
-                                        className="bg-gradient-to-r from-[#B80F2A] to-[#E63946] text-white px-6 py-2.5 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2"
+                                        className="bg-gradient-to-r from-[#B80F2A] to-[#E63946] text-white px-6 py-2.5 rounded-xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-2 cursor-pointer"
                                     >
                                         <span className="font-medium">Send</span>
                                         <Send className="w-4 h-4" />

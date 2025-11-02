@@ -32,7 +32,7 @@ export default function TherapistShowcase() {
 
                         <button 
                             onClick={() => navigate(`/chat/${therapist.mode}`)}
-                            className="mt-6 bg-[#B80F2A] text-[#FFFFFF] font-medium px-5 py-2 rounded-xl hover:bg-[#E63946] hover:text-[#FFF8F8] flex items-center gap-2 transition">
+                            className="mt-6 bg-[#B80F2A] text-[#FFFFFF] font-medium px-5 py-2 rounded-xl hover:bg-[#E63946] hover:text-[#FFF8F8] flex items-center gap-2 transition cursor-pointer">
                             <MessageCircle className="w-4 h-4" />
                             Talk Now
                         </button>
