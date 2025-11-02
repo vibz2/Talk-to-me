@@ -1,4 +1,4 @@
-# 🧠 TalkToMe — Your AI Therapy Companion
+# 🧠 Talk To Me — Your AI Therapy Companion
 
 <img width="2559" height="1409" alt="image" src="https://github.com/user-attachments/assets/ad26b932-094a-4552-ada9-c5f2fc80e804" />
 
