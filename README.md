@@ -4,7 +4,7 @@
 
 ## Overview
 
-**TalkToMe** is a mental health web app designed to provide gentle, AI-powered therapeutic support.  
+**Talk To Me** is a mental health web app designed to provide gentle, AI-powered therapeutic support.  
 Users can chat with one of three virtual therapists, each representing a different approach to healing.  
 Sessions are powered by the **Gemini API** and saved locally for privacy and easy revisiting.
 
