@@ -1,6 +1,6 @@
 # 🧠 Talk To Me — Your AI Therapy Companion
 
-<img width="2559" height="1409" alt="image" src="https://github.com/user-attachments/assets/ad26b932-094a-4552-ada9-c5f2fc80e804" />
+<img width="2527" height="1410" alt="image" src="https://github.com/user-attachments/assets/e69410b4-edc0-40c0-971e-3e7294c931b1" />
 
 ## Overview
 
@@ -40,7 +40,7 @@ Sessions are powered by the **Gemini API** and saved locally for privacy and eas
 
 **Landing Page**
 
-<img width="2559" height="1409" alt="image" src="https://github.com/user-attachments/assets/cf8fe8f2-8de1-4cc7-b8b6-84fa87428ce0" />
+<img width="2527" height="1410" alt="image" src="https://github.com/user-attachments/assets/12e58b21-a434-4c44-a4df-09ab2bbf1831" />
 
 **Therapist Selection**
 
